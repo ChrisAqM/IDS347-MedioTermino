@@ -1,8 +1,6 @@
-#from fastapi import FastAPI
-#from uvicorn import run
-import consultas as con
+from pymongo import MongoClient
 import logging
-#import configuration as C
+import database as db
 import os
 
 # setting up the logging
@@ -35,55 +33,74 @@ while opcion != 6:
         print("Ha seleccionado la Opción 1.")
         try:
             logging.info("Ejecutando la consulta 1")
-            result = con.Con1()
+            myview = db.mydb["Consulta 1"]
+            cursor = myview.find()
+
+            for result in cursor:
+                print(result)
         except:
             logging.error("La consulta 1 falló")
             result = "La consulta 1 falló"
-        print(result)
+            print(result)        
         input("Presione Enter para continuar...")
     elif opcion == 2:
         print("Ha seleccionado la Opción 2.")
         try:
             logging.info("Ejecutando la consulta 2")
-            result = con.Con2()
+            myview = db.mydb["Consulta 2"]
+            cursor = myview.find()
+
+            for result in cursor:
+                print(result)
         except:
             logging.error("La consulta 2 falló")
             result = "La consulta 2 falló"
-        print(result)
+            print(result)
         input("Presione Enter para continuar...")
     elif opcion == 3:
         print("Ha seleccionado la Opción 3.")
         try:
             logging.info("Ejecutando la consulta 3")
-            result = con.Con3()
+            myview = db.mydb["Consulta 3"]
+            cursor = myview.find()
+
+            for result in cursor:
+                print(result)
         except:
             logging.error("La consulta 3 falló")
             result = "La consulta 3 falló"
-        print(result)
+            print(result)
         input("Presione Enter para continuar...")
     elif opcion == 4:
         print("Ha seleccionado la Opción 4.")
         try:
             logging.info("Ejecutando la consulta 4")
-            result = con.Con4()
+            myview = db.mydb["Consulta 4"]
+            cursor = myview.find()
+
+            for result in cursor:
+                print(result)
         except:
             logging.error("La consulta 4 falló")
             result = "La consulta 4 falló"
-        print(result)
+            print(result)
         input("Presione Enter para continuar...")
     elif opcion == 5:
         print("Ha seleccionado la Opción 5.")
         try:
             logging.info("Ejecutando la consulta 5")
-            result = con.Con5()
+            myview = db.mydb["Consulta 5"]
+            cursor = myview.find()
+
+            for result in cursor:
+                print(result)
         except:
             logging.error("La consulta 5 falló")
             result = "La consulta 5 falló"
-        print(result)
+            print(result)
         input("Presione Enter para continuar...")
     elif opcion == 6:
         print("Saliendo...")
-        # log a message indicating the end of the application
         logging.info("Ending ...")
         break
     else:
