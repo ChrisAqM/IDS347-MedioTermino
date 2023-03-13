@@ -1,11 +1,11 @@
-from pymongo import MongoClient
+import configuration as C
 import logging
 import database as db
 import os
 
 # setting up the logging
 logging.Logger(name="Logs")
-logging.basicConfig(filename="log.txt", level=logging.DEBUG, format="%(asctime)s %(message)s")
+logging.basicConfig(filename=C.LOG_FILE, level=logging.DEBUG, format="%(asctime)s %(message)s")
 
 # log a message indicating the start of the application
 logging.info("Starting ...")
